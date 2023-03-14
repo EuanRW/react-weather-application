@@ -1,0 +1,46 @@
+{
+    "coord": {
+        "lon": -2.6023,
+        "lat": 51.4492
+    },
+    "weather": [
+        {
+            "id": 502,
+            "main": "Rain",
+            "description": "heavy intensity rain",
+            "icon": "10n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 5.18,
+        "feels_like": 1.06,
+        "temp_min": 3.37,
+        "temp_max": 6.79,
+        "pressure": 1012,
+        "humidity": 86
+    },
+    "visibility": 1200,
+    "wind": {
+        "speed": 6.17,
+        "deg": 280
+    },
+    "rain": {
+        "1h": 0.22
+    },
+    "clouds": {
+        "all": 75
+    },
+    "dt": 1678823649,
+    "sys": {
+        "type": 2,
+        "id": 2029649,
+        "country": "GB",
+        "sunrise": 1678775266,
+        "sunset": 1678817509
+    },
+    "timezone": 0,
+    "id": 3333134,
+    "name": "Bristol",
+    "cod": 200
+}
