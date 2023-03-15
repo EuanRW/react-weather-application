@@ -3,6 +3,7 @@ import type { ReactElement } from 'react'
 import WeatherCard from '../WeatherCard/WeatherCard'
 import LocationInput from '../LocationInput/LocationInput'
 import LocationCard from '../LocationCard/LocationCard'
+import type { WeatherData } from '../../types/WeatherData'
 
 import '../../globals.css'
 import './App.css'
@@ -10,14 +11,6 @@ import './App.css'
 let apiKey = ''
 if (process.env.REACT_APP_WEATHER_API_KEY !== null && process.env.REACT_APP_WEATHER_API_KEY !== undefined) {
   apiKey = process.env.REACT_APP_WEATHER_API_KEY
-}
-
-interface WeatherData {
-  temperature: number
-  description: string
-  country: string
-  iconUrl: string
-  weatherCode: string
 }
 
 function App (): ReactElement {
@@ -49,9 +42,12 @@ function App (): ReactElement {
       const iconCode: string = weatherData.weather[0].icon
       const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`
       const weatherCode = weatherData.weather[0].id
+      const tempFeelsLike = weatherData.main.feels_like
+      const tempMin = weatherData.main.temp_min
+      const tempMax = weatherData.main.temp_max
 
       setLocationNameFromAPI(name)
-      setWeatherData({ temperature, description, country, iconUrl, weatherCode })
+      setWeatherData({ temperature, description, country, iconUrl, weatherCode, tempFeelsLike, tempMin, tempMax })
     } catch (error: any) {
       setError(error.message)
     }
