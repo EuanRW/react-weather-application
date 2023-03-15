@@ -1,0 +1,24 @@
+#location-card {
+    min-width: 320px;
+    min-height: 480px;
+    position: relative;
+    overflow: hidden;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(128,128,128,0) 35%, rgba(255,255,255,0) 100%);
+    background-color: transparent;
+}
+
+#location {
+    position: relative;
+    z-index: 100;
+    color: white;
+}
+
+.weather-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}

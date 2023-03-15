@@ -11,10 +11,11 @@ main {
   gap: 10px;
   display: flex;
   flex-direction: column;
+  min-width: 320px;
+  min-height: 480px;
 }
 
 #location-card {
-  border: 1px solid black;
   border-radius: 0.5rem;
   padding: 10px;
 }

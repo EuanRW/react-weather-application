@@ -1,5 +1,38 @@
 #location-input {
-  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 0.5rem;
   padding: 10px;
+  background-color: #83b0e1;
+  gap: 10px;
+}
+
+#search-icon {
+  color: white;
+}
+
+input {
+  background-color: transparent;
+  border: 0px;
+  color: white;
+  padding: 3px;
+  border-bottom: 1px solid white;
+}
+
+#enter-icon {
+  background-color: white;
+  padding: 3px;
+  border-radius: 0.25rem;
+  color: #83b0e1;
+}
+
+#enter-icon:hover {
+  cursor: pointer;
+  background-color: #83b0e1;
+  color: white; 
+}
+
+::placeholder { 
+  color: white;
 }

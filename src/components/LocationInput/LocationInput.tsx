@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FaSearch } from 'react-icons/fa'
+import { FaSearch, FaCaretRight } from 'react-icons/fa'
 import './LocationInput.css'
 
 interface LocationInputProps {
@@ -28,7 +28,7 @@ const LocationInput: React.FC<LocationInputProps> = (props: LocationInputProps) 
   return (
     <div id='location-input'>
       <span>
-        <FaSearch />
+        <FaSearch id='search-icon'/>
       </span>
       <input
         type="text"
@@ -37,7 +37,7 @@ const LocationInput: React.FC<LocationInputProps> = (props: LocationInputProps) 
         onChange={handleInputChange}
         onKeyPress={handleEnterPress}
       />
-      <button onClick={handleSearchClick}>Search</button>
+      <FaCaretRight id='enter-icon' onClick={handleSearchClick}/>
     </div>
   )
 }

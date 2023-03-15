@@ -1,5 +1,26 @@
 #weather-card {
-  border: 1px solid black;
+  display: flex;
   border-radius: 0.5rem;
   padding: 10px;
+  background-color: #83b0e1;
+  color: white;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+#headline-info {
+  margin-top: 16px;
+  padding-right: 20px;
+}
+
+#temperature {
+  font-size: 24px;
+}
+
+#weather-description {
+  font-size: 18px;
+  
 }

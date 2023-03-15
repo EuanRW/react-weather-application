@@ -16,6 +16,8 @@ interface WeatherData {
   temperature: number
   description: string
   country: string
+  iconUrl: string
+  weatherCode: string
 }
 
 function App (): ReactElement {
@@ -32,7 +34,6 @@ function App (): ReactElement {
         `http://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(location)}&limit=1&appid=${apiKey}`
       )
       const coordinatesData = await coordinatesResponse.json()
-      console.log(coordinatesData)
       const name: string = coordinatesData[0].name
       const lat: number = coordinatesData[0].lat
       const lon: number = coordinatesData[0].lon
@@ -45,9 +46,12 @@ function App (): ReactElement {
       const temperature = weatherData.main.temp
       const description = weatherData.weather[0].description
       const country = weatherData.sys.country
+      const iconCode: string = weatherData.weather[0].icon
+      const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`
+      const weatherCode = weatherData.weather[0].id
 
       setLocationNameFromAPI(name)
-      setWeatherData({ temperature, description, country })
+      setWeatherData({ temperature, description, country, iconUrl, weatherCode })
     } catch (error: any) {
       setError(error.message)
     }
@@ -77,8 +81,8 @@ function App (): ReactElement {
         <LocationInput setLocation={setLocation} location={location}></LocationInput>
         {weatherData !== null && <WeatherCard weatherData={weatherData} />}
       </div>
-      {locationNameFromAPI !== null &&
-        <LocationCard location={locationNameFromAPI + ', ' + weatherData.country}></LocationCard>
+      {locationNameFromAPI !== null && weatherData.country !== null && weatherData.weatherCode !== undefined &&
+        <LocationCard location={locationNameFromAPI + ', ' + weatherData.country} weatherCode={weatherData.weatherCode}></LocationCard>
       }
     </div>
   )

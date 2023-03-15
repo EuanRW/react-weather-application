@@ -8,6 +8,9 @@ interface WeatherCardProps {
 interface WeatherData {
   temperature: number
   description: string
+  country: string
+  iconUrl: string
+  weatherCode: string
 }
 
 function capitalizeFirstLetter (string: string): string {
@@ -16,9 +19,14 @@ function capitalizeFirstLetter (string: string): string {
 
 const WeatherCard: React.FC<WeatherCardProps> = (props: WeatherCardProps) => {
   return (
-    <div id='weather-card'>
-      <p>Current temperature: {props.weatherData.temperature} °C</p>
-      <p>Current weather: {capitalizeFirstLetter(props.weatherData.description)}</p>
+    <div id="weather-card">
+      <img src={props.weatherData.iconUrl} alt="Weather icon"></img>
+      <div id="headline-info">
+        <p id='temperature'>{props.weatherData.temperature} °C</p>
+        <p id='weather-description'>
+          {capitalizeFirstLetter(props.weatherData.description)}
+        </p>
+      </div>
     </div>
   )
 }
