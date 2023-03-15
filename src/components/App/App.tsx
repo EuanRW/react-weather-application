@@ -1,10 +1,15 @@
+// Dependencies
 import React, { useEffect, useState } from 'react'
 import type { ReactElement } from 'react'
+import { Helmet } from 'react-helmet'
+
+// Components
 import WeatherCard from '../WeatherCard/WeatherCard'
 import LocationInput from '../LocationInput/LocationInput'
 import LocationCard from '../LocationCard/LocationCard'
 import type { WeatherData } from '../../types/WeatherData'
 
+// Styles
 import '../../globals.css'
 import './App.css'
 
@@ -73,6 +78,14 @@ function App (): ReactElement {
 
   return (
     <div id='app-container'>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        ></meta>
+        <title>Weather Application</title>
+      </Helmet>
       <div id='weather-container'>
         <LocationInput setLocation={setLocation} location={location}></LocationInput>
         {weatherData !== null && <WeatherCard weatherData={weatherData} />}
