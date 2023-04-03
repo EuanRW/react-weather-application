@@ -1,5 +1,5 @@
 # weather-application
-[Live Demo](https://euanrw.github.io/weather-application/) :point_left:  
+[Live Demo](https://euanrw.github.io/react-weather-application/) :point_left:  
 A weather forecasting app using the weather API from openweathermap.org. You are able to search for a specific location and toggle displaying the data in Fahrenheit or Celsius.
 
 ## Objectives
